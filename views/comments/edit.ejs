@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<div id="form" style="width:500px; margin: 0 auto">
+    <h1 style="font-weight:600"><center>Edit comment </center></h1>
+    <div style="margin:0 auto; width:300px;">
+        <form action="/campgrounds/<%= campgroundid%>/comments/<%= comment._id%>?_method=PUT" method="POST">
+            <input style="display:block; width:100%; margin:20px 0; padding:3px; border-radius:5px; outline:none; border:solid lightgrey 1px" type="text"  name="comment[text]"  value=<%= comment.text%>>
+            <button style="margin:0 auto; display:block; width:100%; color:white; background-color:#1a1aff; border:none;padding:8px; border-radius:5px;">Submit</button>
+            
+        </form>
+    
+        <a href="/campgrounds/<%=campgroundid%>">Go Back</a>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

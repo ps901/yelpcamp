@@ -1,0 +1,20 @@
+<h1>edit form</h1>
+<% include ../partials/header %>
+
+<div id="form" style="width:500px; margin: 0 auto">
+    <h1 style="font-weight:600"><center>Edit <%=campground.name %></center></h1>
+    <div style="margin:0 auto; width:300px;">
+        <form action="/campgrounds/<%= campground._id%>?_method=PUT" method="POST">
+            <input style="display:block; width:100%; margin:20px 0; padding:3px; border-radius:5px; outline:none; border:solid lightgrey 1px" type="text" name="campground[name]" value="<%= campground.name%>">
+             <input style="display:block; width:100%; margin:20px 0; padding:3px; border-radius:5px; outline:none; border:solid lightgrey 1px" type="number" name="campground[price]" value="<%= campground.price%>" min="0.01" step="0.01">
+            <input style="display:block; width:100%; margin:20px 0; padding:3px; border-radius:5px; outline:none; border:solid lightgrey 1px" type="text"  name="campground[image]"  value="<%= campground.image%>">
+            <textarea style="display:block; width:100%; margin:20px 0; padding:3px; border-radius:5px; outline:none; border:solid lightgrey 1px" name="campground[desc]"> <%= campground.desc%> </textarea>
+            <button style="margin:0 auto; display:block; width:100%; color:white; background-color:#1a1aff; border:none;padding:8px; border-radius:5px;">Submit</button>
+        </form>
+    
+        <a href="/campgrounds">Go Back</a>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
